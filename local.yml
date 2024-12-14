@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+# run roles
+- hosts: apple
+  tags: apple
+  become: true
+  roles:
+    - suzuki-shunsuke.rbenv-module
+    - apple

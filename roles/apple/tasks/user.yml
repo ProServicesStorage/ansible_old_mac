@@ -1,0 +1,13 @@
+- name: add ansible user
+  user:
+    name: voltron
+    system: yes
+
+# You could copy this and do it for your own user as I do. Just need to create another sudoer file from the files directory and change the name of the user in the user module and the file name.
+- name: setup sudo for ansible user
+  copy:
+    src: files/sudoer_voltron
+    dest: /etc/sudoers.d/voltron
+    owner: root
+    group: wheel
+    mode: 0440

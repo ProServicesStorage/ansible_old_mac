@@ -1,0 +1,19 @@
+
+# Aliases
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias back='cd $OLDPWD'
+alias c='clear'
+alias cd..='cd ..'
+alias df='df -h'
+
+# To get the external IP address
+alias extip='curl ipv4.icanhazip.com'
+
+alias h='history'
+alias j='jobs -l'
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias weather='curl wttr.in'
+alias svim='sudo vim'
+

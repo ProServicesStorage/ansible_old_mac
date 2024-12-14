@@ -1,0 +1,15 @@
+- name: copy ansible-pull-private script
+  copy:
+    src: files/ansible-pull-private.sh
+    dest: /Users/voltron/ansible-pull-private.sh
+    owner: root
+    group: wheel
+
+- name: add ansible-pull cron job
+  cron:
+    name: ansible auto-provision
+    user: voltron
+    minute: "30"
+    hour: "*"
+    job: "/Users/voltron/ansible-pull-private.sh > /dev/null"
+    state: present

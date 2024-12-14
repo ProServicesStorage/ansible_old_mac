@@ -1,0 +1,26 @@
+# Nicer prompt.
+export PS1=$'\n'"%F{green}🍩%@ %W%F %F{yellow} %M %~ %F %F{white}"$'\n'"$ "
+
+# Custom $PATH with extra locations.
+export PATH=$HOME/Library/Python/3.9/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
+
+# Include alias file (if present) containing aliases for ssh, etc.
+if [ -f ~/.aliases ]
+then
+  source ~/.aliases
+fi
+
+# Show system information at login. Where you get the really cool looking ASCII art.
+if [ -t 0 ]; then
+    if type -p "neofetch" > /dev/null; then
+        neofetch
+    else
+        echo "Warning: neofetch was called, but it's not installed."
+    fi
+fi
+
+# Setup rbenv
+eval "$(rbenv init - zsh)"
+
+
+

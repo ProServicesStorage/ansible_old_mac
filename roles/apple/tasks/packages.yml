@@ -1,0 +1,39 @@
+- name: Update Macports and the ports tree
+  community.general.macports:
+    selfupdate: true
+    upgrade: true
+  changed_when: false
+
+- name: install various macports
+  community.general.macports:
+    name: "{{ ports }}"
+  vars:
+    ports:
+    - wget
+    - htop
+    - nmap
+    - coreutils
+    - ImageMagick7
+    - ffmpeg
+    - yt-dlp
+    - gnupg2
+    - tree
+    - inetutils
+    - tmux
+    - pandoc
+    - lynx
+    - emacs
+    - aspell
+    - mtr
+    - mc
+    - neofetch
+    - texlive-latex-extra
+    - bat
+    - neovim
+    - rclone
+    - 7zip
+    - php83
+    - certbot
+    - ruby33
+    - ruby-build
+    - rbenv
