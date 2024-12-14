@@ -8,5 +8,4 @@
   tags: apple
   become: true
   roles:
-    - suzuki-shunsuke.rbenv-module
     - apple

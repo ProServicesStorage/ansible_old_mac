@@ -7,7 +7,9 @@ I having been playing around with Ansible lately and one of the use cases I have
 
 I am currently testing with MacOS Monterey on a MacBook 12-inch, Early 2016.
 
-Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had a done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as HomeBrew I guess, but works so who cares. Also, VS Code is no longer supported on Monterey
+Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had a done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as HomeBrew I guess, but works on older macs so maybe its cooler. 
+
+Also, VS Code is no longer supported on Monterey so removed for now but will update with a `when:` section
 
 ## Instructions
 
@@ -25,7 +27,7 @@ Unfortunately the overall process with a Mac is more manual. Some steps can stil
 xcode-select --install
 ```
 
-8. Download then install MacPorts. You can download from [here](https://www.macports.org/install.php). Click on your version of OSX 
+8. Download then install MacPorts. You can download from [here](https://www.macports.org/install.php). Click on your version of OSX
 9. Download and install Python for mac. You can get [here](https://www.python.org/downloads/)
 10. Install Python which also installs `pip`. Make sure to click on the **Install Certificates.command" when the installation completes.
 11. Upgrade pip
@@ -40,10 +42,19 @@ pip3 install --upgrade pip
 pip3 install ansible
 ```
 
-13. Modify the **hosts** file to the hostname of your Mac. You can check by running the `hostname` command.
-14. Modify the **group_vars/all.yml** to your username. NOTE: It is expected the username is already created on the Mac as this is required during installation/rebuild.
-15. Run playbook from Macbook. Takes about an hour to complete on my MacBook.
+13. Clone or fork this repo.
+14. Modify the **hosts** file to the hostname of your Mac. You can check by running the `hostname` command.
+15. Modify the **group_vars/all.yml** to your username. NOTE: It is expected the username is already created on the Mac as this is required during installation/rebuild.
+16. Run playbook from Macbook. It is meant to be run using **ansible-pull** from your git repo. Takes about an hour to complete on my MacBook.
+
 
 ```bash
-sudo ansible-pull -U https://github.com/ProServicesStorage/ansible_old_mac.git
+# If a public repo then run the following from the Mac. Replace with your values.
+sudo ansible-pull -U https://github.com/<Your Account>/your_git.git
+```
+
+```bash
+# If a private repo then run the following from the Mac. Replace with your values.
+export OAUTH_TOKEN="Insert your github oauth token here"
+ansible-pull -U https://oauth2:$OAUTH_TOKEN@github.com/ProServicesStorage/ansible_configs.git
 ```
