@@ -7,13 +7,13 @@ I having been playing around with Ansible lately and one of the use cases I have
 
 I am currently testing with MacOS Monterey on a MacBook 12-inch, Early 2016.
 
-Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had a done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as HomeBrew I guess, but works on older macs so maybe its cooler. 
+Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had I done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as HomeBrew I guess, but works on older macs easily so maybe its way cooler.
 
 Also, VS Code is no longer supported on Monterey so removed for now but will update with a `when:` section
 
 ## Instructions
 
-Unfortunately the overall process with a Mac is more manual. Some steps can still be automated!
+Basically, fork or clone this repository then modify and run.
 
 1. Refresh installation of Mac using Command R during boot. Takes a couple of hours.
 2. Update OS. Another 45 minutes with reboot.
@@ -27,9 +27,9 @@ Unfortunately the overall process with a Mac is more manual. Some steps can stil
 xcode-select --install
 ```
 
-8. Download then install MacPorts. You can download from [here](https://www.macports.org/install.php). Click on your version of OSX
+8. Download then install MacPorts. You can download from [here](https://www.macports.org/install.php). Click on **your version of OSX**
 9. Download and install Python for mac. You can get [here](https://www.python.org/downloads/)
-10. Install Python which also installs `pip`. Make sure to click on the **Install Certificates.command" when the installation completes.
+10. Install Python which also installs `pip`. Make sure to click on the **Install Certificates.command** when the installation completes.
 11. Upgrade pip
 
 ```bash
