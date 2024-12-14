@@ -45,7 +45,7 @@ pip3 install ansible
 13. Clone or fork this repo.
 14. Modify the **hosts** file to the hostname of your Mac. You can check by running the `hostname` command.
 15. Modify the **group_vars/all.yml** to your username. NOTE: It is expected the username is already created on the Mac as this is required during installation/rebuild.
-16. Run playbook from Macbook. It is meant to be run using **ansible-pull** from your git repo. Takes about an hour to complete on my MacBook.
+16. Run playbook from Macbook. It is meant to be run using **ansible-pull** from your git repo. It needs to be **run using sudo**. Takes about an hour to complete on my MacBook.
 
 
 ```bash
