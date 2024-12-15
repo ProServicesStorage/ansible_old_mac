@@ -11,6 +11,8 @@ Initially, I wouldn't really have distinguished between old/new Mac but I just d
 
 Also, VS Code is no longer supported on Monterey so removed for now but will update with a `when:` section for versions of MacOS where it is supported.
 
+**NOTE:** The version of ruby I am using is old and particular to a project I am working on. You probably want something newer
+
 ## Instructions
 
 Basically, fork or clone this repository then modify and run.
