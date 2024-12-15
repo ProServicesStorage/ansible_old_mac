@@ -7,7 +7,7 @@ I having been playing around with Ansible lately and one of the use cases I have
 
 I am currently testing with MacOS Monterey on a MacBook 12-inch, Early 2016.
 
-Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had I done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as HomeBrew I guess, but works on older macs easily so maybe its way cooler.
+Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had I done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as HomeBrew, I guess, but works on older macs easily so maybe its way cooler.
 
 Also, VS Code is no longer supported on Monterey so removed for now but will update with a `when:` section for versions of MacOS where it is supported.
 
