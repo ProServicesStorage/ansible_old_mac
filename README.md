@@ -15,6 +15,8 @@ Also, VS Code is no longer supported on Monterey so removed for now but will upd
 
 Basically, fork or clone this repository then modify and run.
 
+Below is my rebuild process.
+
 1. Refresh installation of Mac using Command R during boot. Takes a couple of hours.
 2. Update OS. Another 45 minutes with reboot.
 3. [optional] Change hostname
