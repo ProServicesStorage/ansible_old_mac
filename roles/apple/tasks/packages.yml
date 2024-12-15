@@ -37,3 +37,4 @@
     - ruby33
     - ruby-build
     - rbenv
+    - prettyping
