@@ -1,14 +1,14 @@
-- name: Install ruby 2.6.1
+- name: Install ruby {{ ruby_version }}
   become_user: "{{ user_name }}"
-  command: rbenv install --skip-existing 2.6.1
+  command: rbenv install --skip-existing {{ ruby_version }}
   changed_when: false
 
-- name: Set ruby global default as 2.6.1
+- name: Set ruby global default as {{ ruby_version }}
   become_user: "{{ user_name }}"
-  command: rbenv global 2.6.1
+  command: rbenv global {{ ruby_version }}
   changed_when: false
 
-- name: Set ruby local default as 2.6.1
+- name: Set ruby local default as {{ ruby_version }}
   become_user: "{{ user_name }}"
-  command: chdir=~/ rbenv local 2.6.1
+  command: chdir=~/ rbenv local {{ ruby_version }}
   changed_when: false

@@ -5,9 +5,7 @@ Ansible playbook for old macs...
 
 Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had I done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as HomeBrew, I guess, but works on older macs easily so maybe its way cooler.
 
-Also, VS Code is no longer supported on Monterey so removed for now but will update with a `when:` section for versions of MacOS where it is supported.
-
-**NOTE:** The version of ruby I am using is old and particular to a project I am working on. You probably want something newer
+**NOTE:** The version of ruby I am using is right now old and particular to a project I am working on. You probably want something newer. You can modify the variable in the all.yml file to change the ruby version.
 
 ## Instructions
 
