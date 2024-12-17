@@ -4,7 +4,9 @@ Ansible playbook for old macs...
 
 ## General Info
 
-Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had I done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as HomeBrew, I guess, but works on older macs easily so...
+I have a MacBook 12-inch from 2016 which can no longer be upgraded from Monterey and a MacBook Pro from 2017 that can no longer be upgraded from Ventura. Monterey is no longer supported and Ventura will be joining it soon. With that being said, they still work even if they suffer from poor keyboard design.
+
+Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had I done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as Homebrew, I guess, but works on older macs easily so...
 
 ## Instructions
 
