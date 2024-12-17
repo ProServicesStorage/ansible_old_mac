@@ -14,7 +14,7 @@ Below is my rebuild process.
 
 1. Refresh installation of Mac using Command R during boot. Takes a couple of hours.
 2. Update OS. Another 45 minutes with reboot.
-3. [optional] Change hostname. __Could be automated with Ansible but I am using ansible-pull with hosts which should already be resolvable.__
+3. [optional] Change hostname.
 4. [optional] Update DNS to the internal DNS server for local name resolution
 5. [optional] Add the new hostname to the local DNS server
 6. [optional] Set a static IP via reserved DHCP.
