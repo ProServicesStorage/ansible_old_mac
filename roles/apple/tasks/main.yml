@@ -24,3 +24,18 @@
   vars:
     appName: PhpStorm
     dmgURL: https://download.jetbrains.com/webide/PhpStorm-2024.3.1.dmg
+
+- name: "Install Balena Etcher"
+  include_tasks: dmg-install.yml
+  vars:
+    appName: BalenaEtcher
+    dmgURL: https://github.com/balena-io/etcher/releases/download/v1.19.25/balenaEtcher-1.19.25-x64.dmg
+
+# This install the PKG based applications
+- name: "AWS CLI"
+  include_tasks: pkg-install.yml
+  vars:
+    install_path: /usr/local/bin/aws
+    pkgName: AWSCLIV2.pkg
+    pkgURL: https://awscli.amazonaws.com/AWSCLIV2.pkg
+

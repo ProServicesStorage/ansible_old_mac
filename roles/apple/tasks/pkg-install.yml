@@ -1,0 +1,16 @@
+# Install pkg based applications
+
+- local_action: stat path={{ install_path }}
+  register: app_exists
+
+- command: mkdir -p ./tmp/
+  when: app_exists.stat.exists == False
+
+- get_url: url={{ pkgURL }} dest=./tmp/{{ pkgName }}
+  when: app_exists.stat.exists == False
+
+- command: sudo installer -pkg {{ pkgName }} -target /
+  when: app_exists.stat.exists == False
+
+- command: rm -R ./tmp/{{ pkgName }}
+  when: app_exists.stat.exists == False
