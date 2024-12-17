@@ -4,9 +4,7 @@ Ansible playbook for old macs...
 
 ## General Info
 
-Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had I done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as HomeBrew, I guess, but works on older macs easily so maybe its way cooler.
-
-**NOTE:** The version of ruby I am using is right now old and particular to a project I am working on. You probably want something newer. You can modify the variable in the all.yml file to change the ruby version.
+Initially, I wouldn't really have distinguished between old/new Mac but I just dove into using Homebrew and it was taking hours. Had I done a little research prior I would have noticed it isn't even supported anymore on Monterey. So I modified my approach to use MacPorts which has worked just fine. It isn't as hip as HomeBrew, I guess, but works on older macs easily so...
 
 ## Instructions
 
@@ -16,7 +14,7 @@ Below is my rebuild process.
 
 1. Refresh installation of Mac using Command R during boot. Takes a couple of hours.
 2. Update OS. Another 45 minutes with reboot.
-3. [optional] Change hostname
+3. [optional] Change hostname. __Could be automated with Ansible but I am using ansible-pull with hosts which should already be resolvable.__
 4. [optional] Update DNS to the internal DNS server for local name resolution
 5. [optional] Add the new hostname to the local DNS server
 6. [optional] Set a static IP via reserved DHCP.

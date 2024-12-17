@@ -1,13 +1,10 @@
 - block:
   
-
   - include_tasks: packages.yml
   - include_tasks: settings.yml
   - include_tasks: ruby.yml
   - include_tasks: terminal.yml
 
-  #- include_tasks: user.yml
-  #- include_tasks: cron.yml
 
 # This install the DMG based applications
 - name: "Install Google Chrome"
