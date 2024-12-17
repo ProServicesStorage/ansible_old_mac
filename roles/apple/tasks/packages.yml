@@ -38,6 +38,10 @@
     - ruby-build
     - rbenv
     - prettyping
+    - ipcalc
+    - tree
+    - apg
+    - pstree
   
 #Install VSCode. NOTE - No longer supported on Monterey
 - name: Install Visual Studio Code

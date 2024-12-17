@@ -1,9 +1,29 @@
 - block:
   
+
   - include_tasks: packages.yml
   - include_tasks: settings.yml
+  - include_tasks: ruby.yml
+  - include_tasks: terminal.yml
+
   #- include_tasks: user.yml
   #- include_tasks: cron.yml
-  - include_tasks: ruby.yml
 
+# This install the DMG based applications
+- name: "Install Google Chrome"
+  include_tasks: dmg-install.yml
+  vars:
+    appName: GoogleChrome
+    dmgURL: https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
 
+- name: "Install Herd"
+  include_tasks: dmg-install.yml
+  vars:
+    appName: Herd
+    dmgURL: https://herd.laravel.com/download
+
+- name: "Install PhpStorm"
+  include_tasks: dmg-install.yml
+  vars:
+    appName: PhpStorm
+    dmgURL: https://download.jetbrains.com/webide/PhpStorm-2024.3.1.dmg

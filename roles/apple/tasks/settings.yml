@@ -1,26 +1,17 @@
+# These are all of my custom mac settings.
 
-- name: copy dotfiles for users
-  tags: dotfiles,zsh
-  copy:
-    src: files/{{ item.src }}
-    dest: /Users/{{ user_name }}/{{ item.dest }}
-    owner: "{{ user_name }}"
-    group: staff
-    mode: 0600
-  with_items:
-    - { src: 'mac/aliases', dest: '.aliases' }
-    - { src: 'mac/zshrc', dest: '.zshrc' }
-    - { src: 'mac/functions', dest: '.functions' }
 
-# - name: configure screenshots folder
-#   community.general.osx_defaults:
-#     domain: com.apple.screencapture
-#     key: location
-#     type: string
-#     value: ~/Downloads
-#   become_user: "{{ user_name }}"
+# Configure the default screenshot location
+- name: configure screenshots folder
+  community.general.osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: ~/Downloads
+  become_user: "{{ user_name }}"
 
-- name: Avoid creating .DS_Store files on network volumes
+# Not even sure if this works but not trying to be messy and insecure.
+- name: Avoid creating .DS_Store files
   community.general.osx_defaults:
     domain: com.apple.desktopservices
     key: DSDontWriteNetworkStores
@@ -28,82 +19,21 @@
     value: true
   become_user: "{{ user_name }}"
 
+# Disable system notifications. Not sure if this works either
 - name: Disable system notifications
   community.general.osx_defaults:
     path: /Library/Preferences/.GlobalPreferences
     domain: NSUserNotificationCenter
     key: enabled
     value: false
-
-- name: create lazyvim config directory for nvim
-  file:
-    path: ~/.config/nvim
-    state: directory
-    mode: '0755'
-  become_user: "{{ user_name }}"
   
-- name: clone lazyvim repo
-  git:
-    repo: 'https://github.com/LazyVim/starter'
-    dest: ~/.config/nvim
+# Setup 3 finger drag. I rebooted but relogin probably and it kicks in
+- name: Enable 3 finger drag
+  community.general.osx_defaults:
+    domain: com.apple.AppleMultitouchTrackpad
+    key: TrackpadThreeFingerDrag
+    type: bool
+    value: true
   become_user: "{{ user_name }}"
 
-- name: copy colorscheme lua file
-  copy:
-    src: files/mac/colorscheme.lua
-    dest: /Users/{{ user_name }}/.config/nvim/lua/plugins/colorscheme.lua
-    owner: "{{ user_name }}"
-    group: staff
-
-- name: make /tmp/nerdfont directory
-  file: 
-    path: /tmp/nerdfont
-    state: directory
-    mode: '0755'
-
-- name: Download Nerd Font
-  get_url: 
-    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Hack.zip"
-    dest: /tmp/NerdFont-Hack.zip
-
-- name: Unzip Nerd Font
-  unarchive:
-    src: /tmp/NerdFont-Hack.zip
-    dest: /tmp/nerdfont/
-    remote_src: yes
-
-- name: Copy font to user font directory
-  copy:
-    src: /tmp/nerdfont/
-    dest: ~/Library/Fonts/
-    owner: "{{ user_name }}"
-    group: staff
-    mode: 0644 
-  become_user: "{{ user_name }}"
-
-- name: copy terminal settings file
-  copy:
-    src: files/mac/PEACE.terminal
-    dest: /Users/{{ user_name}}/PEACE.terminal
-    owner: "{{ user_name }}"
-    group: staff
-
-- name: import terminal settings
-  command: 
-    cmd: open /Users/{{ user_name }}/PEACE.terminal -a Terminal --args -c "sleep 14; osascript -e 'tell application \"System Events\" to keystroke \"d\" using {command down}'"
-  become_user: "{{ user_name }}"
-
-- name: Make sure service has time to start or stop
-  pause:
-    seconds: 21
-
-- name: Set the Terminal default profile UUID
-  command:
-    cmd: defaults write com.apple.Terminal "Default Window Settings" -string PEACE
-  become_user: "{{ user_name }}"
-
-- name: Set the Terminal startup profile UUID (optional, if you want to change the startup profile too)
-  command:
-    cmd: defaults write com.apple.Terminal "Startup Window Settings" -string PEACE
-  become_user: "{{ user_name }}"
 
