@@ -52,6 +52,8 @@ pip3 install ansible
 sudo ansible-pull -U https://github.com/<Your Account>/your_git.git
 ```
 
+You can also use a private repo using an ssh key or oauth token.
+
 ```bash
 # If a private repo then run the following from the Mac. Replace with your values.
 export OAUTH_TOKEN="Insert your github oauth token here"
