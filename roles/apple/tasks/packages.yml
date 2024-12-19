@@ -42,10 +42,11 @@
     - tree
     - apg
     - pstree
-  
+
+# Not working even with timeout.
 #Install VSCode. NOTE - No longer supported on Monterey
-- name: Install Visual Studio Code
-  get_url: 
-    url: "https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal" 
-    dest: "/Applications/Visual Studio Code.app"
-  when: ansible_distribution_major_version in ["13", "14", "15"]
+#- name: Install Visual Studio Code
+#  get_url: 
+#    url: "https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal" 
+#    dest: "/Applications/Visual Studio Code.app"
+#  when: ansible_distribution_major_version in ["13", "14", "15"]
