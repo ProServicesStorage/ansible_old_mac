@@ -44,4 +44,4 @@
     - tree
     - apg
     - pstree
- when: ansible_distribution == "MacOSX" and ansible_distribution_major_version not in ["14", "15"]
+  when: ansible_distribution == "MacOSX" and ansible_distribution_major_version not in ["14", "15"]
